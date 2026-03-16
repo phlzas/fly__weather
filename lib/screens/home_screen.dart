@@ -55,9 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           child: Center(child: Consumer<AirportsProvider>(
             builder: (context, provider, child) {
-              if (provider.state == RequestState.idle) {
-                provider.get();
-              }
+              
               return switch (provider.state) {
                 RequestState.idle => Text('Loding...'),
                 RequestState.loading => CircularProgressIndicator(),
